@@ -1,5 +1,5 @@
 # se-website-project
-Tutvustame Trump Jr.-i maailmale.
+Tutvustame Trumpi maailmale.
 
 ## Rühm
 * @Slopcorn - Raido Everest
