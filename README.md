@@ -1,7 +1,12 @@
 # se-website-project
-A basic webpage to introduce a topic to the reader.
+Tutvustame Trump Jr.-i maailmale.
 
-## Group
+## Rühm
 * @Slopcorn - Raido Everest
 * @RaulEK - Raul Erik Kattai
 * @Laima-Anna - Laima Anna Dalbiņa
+
+## Tööde jaotus
+* JavaScript - @Slopcorn
+* HTML ja galerii - @RaulEK
+* CSS - @Laima-Anna
