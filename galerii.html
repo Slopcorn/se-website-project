@@ -7,15 +7,30 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" src="js/main.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="menüü">
+    <div class="menüü" id="myTopnav">
         <a href="index.html">Avaleht</a>
         <a href="pahandused.html">Pahandused</a>
         <a class="aktiivne" href="galerii.html">Pildid ja videod</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
     </div>
     <!-- add "content" -->
 </body>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "menüü") {
+        x.className += " responsive";
+    } else {
+        x.className = "menüü";
+    }
+}
+</script>
 
 </html>

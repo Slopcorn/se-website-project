@@ -1,6 +1,23 @@
+﻿body {
+  /* Old browsers */
+  background: #141E30;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(-45deg, #35577D, #141E30);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(-45deg, #35577D, #141E30);
+  color: white;
+  margin-top: 60px;
+
+}
+
 .menüü {
 	background-color: #333;
 	overflow: hidden;
+	position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+
+
 }
 .menüü a {
 	float: left;
@@ -19,3 +36,68 @@
 	background-color: #4CAF50;
 	color: white;
 }
+
+/* Hide the link that should open and close the topnav on small screens */
+.menüü .icon {
+    display: none;
+}
+
+
+.twitter-tweet {
+	margin: 20px 20px 20px 20px;
+}
+
+
+.sidepanel {
+    width: 260px; /* Set the width of the sidebar */
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    margin: 60px 30px 20px 20px;
+	float: right;
+}
+
+/* The navigation menu links */
+.sidepanel a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+#küsimustik-wrapper{
+	margin-top: 50px;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .menüü a:not(:first-child) {display: none;}
+  .menüü a.icon {
+    float: right;
+    display: block;
+  }
+  .sidepanel{
+	  float: none;
+	  width: 100%;
+
+	}
+}
+
+
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .menüü.responsive {position: relative;}
+  .menüü.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menüü.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
