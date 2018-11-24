@@ -20,52 +20,29 @@
 		</a>
     </div>
     <!-- add "content" -->
-    <!-- pildid galerii jaoks -->
-    <div class="row">
-      <div class="column">
-        <img src="img1.jpg" onclick="openModal();currentSlide(1)" class = "hover-shadow"
-      </div>
-      <div class="column">
-        <img src=img2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
-      </div>
-    </div>
-    <!-- suur pilt -->
-    <div id="myModal" class="modal">
-      <span class="close cursor" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
+    <!-- Trigger the Modal -->
+<img id="myImg" src="img1.jpg" alt="Donald" style="width:100%;max-width:300px">
+<img class="myImg" src="img2.jpg" alt="Trump" style="width: 100%;
+  max-width:300px">
 
-        <div class="mySlides">
-          <div class="numbertext">1 / 2</div>
-          <img src="img1_wide.jpg" style="width: 100%"
-        </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-        <div class="mySlides">
-          <div class="numbertext">2 / 2</div>
-          <img src="img2_wide.jpg" style="width: 100%"
-        </div>
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
 
-        <!-- eelmine/järgmine -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
 
-        <!-- pealkiri -->
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
-
-        <!-- alternatiiv pildile -->
-        <div class="column">
-          <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Trump1">
-        </div>
-        <div class="column">
-          <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Trump2">
-        </div>
-      </div>
-    </div>
-
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 
 <script>
+
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "menüü") {
