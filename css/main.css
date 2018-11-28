@@ -14,6 +14,8 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+	margin: 5px 5px;
+	
 }
 
 .myImg:hover {opacity: 0.7;}
@@ -82,6 +84,10 @@
         width: 100%;
     }
 }
+.video{
+	margin: 20px 20px;
+}
+
 
 .menüü {
 	background-color: #333;
