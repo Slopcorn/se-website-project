@@ -11,6 +11,19 @@ function myFunc(pilt){
   captionText.innerHTML = altText
 }
 
+const protsendiList = n => {
+    let list = [];
+    samm = 100/(n-1);
+    for (var i = 0; i < n; i++) {
+        list.push(Math.round(i * samm));
+    }
+    return list;
+}
+const muudaProgressi = n => {
+    /* võtab protsendilise väärtuse sisse. */
+    const elem = document.getElementById("riba");
+    elem.style.width = n + '%';
+}
 
 // Küsitlus, nüüd paremini taaskasutatav
 const quiz = küsimused => {
@@ -76,6 +89,7 @@ const quiz = küsimused => {
             järgmiseNupp.style.display = "inline-block";
             vastamiseNupp.style.display = "none";
         }
+        muudaProgressi(protsentideList[praeguneSlaid]);
     };
 
     // abifunktsioonid, need ühendame nuppudele
@@ -100,9 +114,9 @@ const quiz = küsimused => {
     const slaidid = document.querySelectorAll(".slaid");
     let praeguneSlaid = 0;
 
+    const protsentideList = protsendiList(slaidid.length);
     // näitame kohe oma esimese slaidi ette
     vahetus(0);
-
 
     vastamiseNupp.addEventListener("click", vastatud);
     eelmiseNupp.addEventListener("click", eelmine);

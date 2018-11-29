@@ -182,6 +182,16 @@ button {
   border: 0px;
   padding: 10px;
 }
+/* progressi jaoks */
+#progress {
+    width: 100%;
+    background-color: grey;
+}
+#riba {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+}
 
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
