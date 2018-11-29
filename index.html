@@ -5,6 +5,7 @@
     <title>Trump</title>
     <!-- add favicon -->
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" src="js/main.js"></script>
 	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
@@ -60,7 +61,23 @@
 		<button id="vasta">Vasta</button>
         <div id="tulemused"></div>
         <!-- siin alles kutsume jssi välja. -->
-        <script type="text/javascript" src="js/index_kysitlus.js"></script>
+        <script>quiz([{
+        küsimus: "Kes on Trump?",
+        vastused: {
+            a: "Eesti peaminister",
+            b: "Ameerika president",
+            c: "Meemide müügimees"
+        },
+        õigeVastus: "b"
+    }, {
+        küsimus: "Kui palju on Trump väärt?",
+        vastused: {
+            a: "9 miljardit",
+            b: "3 miljardit",
+            c: "1 miljard"
+        },
+        õigeVastus: "b"
+    }]);</script>
     </div>
 </body>
 
