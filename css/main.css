@@ -1,4 +1,9 @@
-﻿body {
+﻿/* sest ma olen rämedalt laisk */
+* {
+  font-family: sans-serif;
+}
+
+body {
   /* Old browsers */
   background: #141E30;
   /* Chrome 10-25, Safari 5.1-6 */
@@ -151,8 +156,31 @@
     display: block;
 }
 
+/* Küsimustiku jaoks */
 #küsimustik-wrapper{
 	margin-top: 50px;
+  position: relative;
+  min-height: 150px;
+  max-height: 250px;
+}
+.slaid {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  max-width: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.praegune-slaid {
+  z-index: 2;
+  opacity: 1;
+}
+/* teeme nupud ka ilusamaks innit */
+button {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border: 0px;
+  padding: 10px;
 }
 
 

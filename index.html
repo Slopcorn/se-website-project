@@ -64,28 +64,13 @@
 
     <div id="küsimustik-wrapper">
 		<h2>Quiz</h2>
+        
         <div id="küsimustik"></div>
-		<button id="vasta">Vasta</button>
-        <div id="tulemused"></div>
-        <!-- siin alles kutsume jssi välja. -->
-        <script>quiz([{
-        küsimus: "Who is Trump?",
-        vastused: {
-            a: "Estonian Prime Minister",
-            b: "President of the United States",
-            c: "Salesman of memes"
-        },
-        õigeVastus: "b"
-    }, {
-        küsimus: "How much is Trump's net worth?",
-        vastused: {
-            a: "9 billions",
-            b: "3 billions",
-            c: "1 billion"
-        },
-        õigeVastus: "b"
-    }]);</script>
     </div>
+    <button id="eelmine"> Previous </button>
+    <button id="järgmine"> Next </button>
+	<button id="vasta"> Submit </button>
+    <div id="tulemused"></div>
 </body>
 
 <script>
@@ -97,6 +82,24 @@ function myFunction() {
         x.className = "menüü";
     }
 }
+
+quiz([{
+    küsimus: "Who is Trump?",
+    vastused: {
+        a: "Estonian Prime Minister",
+        b: "President of the United States",
+        c: "Salesman of memes"
+    },
+    õigeVastus: "b"
+}, {
+    küsimus: "How much is Trump's net worth?",
+    vastused: {
+        a: "9 billions",
+        b: "3 billions",
+        c: "1 billion"
+    },
+    õigeVastus: "b"
+}]);
 </script>
 
 </html>

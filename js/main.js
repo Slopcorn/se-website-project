@@ -28,14 +28,17 @@ const quiz = küsimused => {
                 );
             }
             väljund.push(
-                `<div class="küsimus"> ${praeguneKüsimus.küsimus} </div>
-        <div class="vastused"> ${vastused.join("")} </div>`
+                `
+                <div class="slaid">
+                <div class="küsimus"> ${praeguneKüsimus.küsimus} </div>
+                <div class="vastused"> ${vastused.join("")} </div>
+                </div>`
             );
         });
         küsimustikuKast.innerHTML = väljund.join("");
-    }
+    };
 
-    function vastatud() {
+    const vastatud = () => {
         const vastuseKonteinerid = küsimustikuKast.querySelectorAll(".vastused");
         let õigeid = 0;
         minuKüsimused.forEach((praeguneKüsimus, i) => {
@@ -50,7 +53,39 @@ const quiz = küsimused => {
             }
         });
         tulemusteKast.innerHTML = `You answered ${õigeid}/${minuKüsimused.length} correctly.`;
-    }
+    };
+
+    const vahetus = küsimuseNumber => {
+        // praeguse slaidi teeme mitteaktiivseks
+        slaidid[praeguneSlaid].classList.remove("praegune-slaid");
+        // sisendiks antud slaidi teeme aktiivseks
+        slaidid[küsimuseNumber].classList.add("praegune-slaid");
+        // uuendame praeguse slaidi numbrit
+        praeguneSlaid = küsimuseNumber;
+        // kui oleme esimese küsimuse juures, peidame eelmise küsimuse nupu
+        if (praeguneSlaid === 0) {
+            eelmiseNupp.style.display = "none";
+        } else {
+            eelmiseNupp.style.display = "inline-block";
+        }
+        // analoogiline - kui oleme viimasel, siis pole järgmist.
+        if (praeguneSlaid === slaidid.length-1) {
+            järgmiseNupp.style.display = "none";
+            vastamiseNupp.style.display = "inline-block";
+        } /* peidame vastamise kui pole viimane */ else {
+            järgmiseNupp.style.display = "inline-block";
+            vastamiseNupp.style.display = "none";
+        }
+    };
+
+    // abifunktsioonid, need ühendame nuppudele
+    const järgmine = () => {
+        vahetus(praeguneSlaid + 1);
+    };
+    const eelmine = () => {
+        vahetus(praeguneSlaid - 1);
+    };
+
 
     const küsimustikuKast = document.getElementById("küsimustik");
     const tulemusteKast = document.getElementById("tulemused");
@@ -58,5 +93,18 @@ const quiz = küsimused => {
     const minuKüsimused = küsimused
 
     teeKüsimustik();
+
+    /* lehtede lisamine */
+    const eelmiseNupp = document.getElementById("eelmine");
+    const järgmiseNupp = document.getElementById("järgmine");
+    const slaidid = document.querySelectorAll(".slaid");
+    let praeguneSlaid = 0;
+
+    // näitame kohe oma esimese slaidi ette
+    vahetus(0);
+
+
     vastamiseNupp.addEventListener("click", vastatud);
-}
+    eelmiseNupp.addEventListener("click", eelmine);
+    järgmiseNupp.addEventListener("click", järgmine);
+};
