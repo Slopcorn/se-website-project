@@ -49,7 +49,7 @@ const quiz = küsimused => {
                 vastuseKonteinerid[i].style.color = "red";
             }
         });
-        tulemusteKast.innerHTML = `Õigeid vastuseid oli ${õigeid} ${minuKüsimused.length}-st.`;
+        tulemusteKast.innerHTML = `You answered ${õigeid}/${minuKüsimused.length} correctly.`;
     }
 
     const küsimustikuKast = document.getElementById("küsimustik");
